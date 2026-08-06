@@ -58,6 +58,7 @@ build() {
 	unzip -Z1 "${archive_path}" | grep -q "^${plugin_slug}/includes/class-schedule-renderer.php$"
 	unzip -Z1 "${archive_path}" | grep -q "^${plugin_slug}/assets/css/schedule.css$"
 	unzip -Z1 "${archive_path}" | grep -q "^${plugin_slug}/assets/js/schedule.js$"
+	unzip -Z1 "${archive_path}" | grep -q "^${plugin_slug}/assets/js/schedule-editor.js$"
 	if unzip -Z1 "${archive_path}" | grep -Eq '/README(\.zh-CN)?\.md$'; then
 		printf 'Unexpected development README found in archive.\n' >&2
 		exit 1

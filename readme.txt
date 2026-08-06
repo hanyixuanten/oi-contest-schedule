@@ -1,6 +1,6 @@
 === OI Contest Schedule ===
 Contributors: hanyixuanten
-Tags: contest, schedule, shortcode, dashboard, competitive programming
+Tags: contest, schedule, block, dashboard, competitive programming
 Requires at least: 6.4
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -8,13 +8,13 @@ Stable tag: 0.1.0
 License: GPL-3.0-only
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Display upcoming OI and competitive programming contests in the WordPress dashboard or on any page with a shortcode.
+Display upcoming OI and competitive programming contests in the WordPress dashboard or with an editor block.
 
 == Description ==
 
 OI Contest Schedule displays upcoming competitive programming contests with local times and live countdowns.
 
-The plugin adds an **Upcoming OI Contests** widget to the WordPress dashboard. To display the schedule on the front end, add the `[oi_contest_schedule]` shortcode to a post, page, or Shortcode block.
+The plugin adds an **Upcoming OI Contests** widget to the WordPress dashboard. To display the schedule on the front end, add the **OI Contest Schedule** block to a post or page.
 
 Features include:
 
@@ -25,9 +25,13 @@ Features include:
 * A five-minute cache using the WordPress Transients API.
 * English and Simplified Chinese translations.
 
+= Block settings =
+
+Add the **OI Contest Schedule** block from the block inserter. Its settings sidebar lets you display between 1 and 50 contests and enable the compact layout. The block is rendered dynamically so it always uses current contest data.
+
 = Shortcode options =
 
-The default shortcode displays up to 10 contests:
+The shortcode remains available for classic editors and templates. By default it displays up to 10 contests:
 
 `[oi_contest_schedule]`
 
@@ -44,7 +48,7 @@ Set `compact` to `true` to use the compact layout:
 1. Upload the `oi-contest-schedule` directory to `/wp-content/plugins/`, or install the plugin ZIP through the WordPress Plugins screen.
 2. Activate **OI Contest Schedule** through the Plugins screen.
 3. Open the WordPress dashboard to see the contest widget.
-4. To show the schedule on the front end, insert `[oi_contest_schedule]` into a post or page.
+4. To show the schedule on the front end, add the **OI Contest Schedule** block to a post or page.
 
 == Frequently Asked Questions ==
 
@@ -86,6 +90,7 @@ Service and data source:
 = 0.1.0 =
 
 * Added the upcoming contest dashboard widget.
+* Added the **OI Contest Schedule** editor block with limit and compact layout settings.
 * Added the `[oi_contest_schedule]` shortcode with `limit` and `compact` options.
 * Added visitor-local time formatting and live countdowns.
 * Added platform styling and responsive layouts.

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: OI Contest Schedule
  * Plugin URI: https://github.com/hanyixuanten/oi-contest-schedule
- * Description: Display upcoming OI contests in a dashboard widget or on any page with a shortcode.
+ * Description: Display upcoming OI contests in a dashboard widget or with an editor block.
  * Version: 0.1.0
  * Requires at least: 6.4
  * Requires PHP: 7.4

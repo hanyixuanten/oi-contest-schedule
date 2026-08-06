@@ -16,6 +16,21 @@ msgstr ""
 msgid "Upcoming OI Contests"
 msgstr "即将到来的 OI 赛事"
 
+msgid "OI Contest Schedule"
+msgstr "OI 赛事日程"
+
+msgid "Display upcoming OI contests with local times and live countdowns."
+msgstr "显示即将到来的 OI 赛事、本地时间和实时倒计时。"
+
+msgid "Schedule settings"
+msgstr "日程设置"
+
+msgid "Number of contests"
+msgstr "赛事数量"
+
+msgid "Compact layout"
+msgstr "紧凑布局"
+
 msgid "Running"
 msgstr "进行中"
 

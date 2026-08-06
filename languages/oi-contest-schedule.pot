@@ -11,6 +11,21 @@ msgstr ""
 msgid "Upcoming OI Contests"
 msgstr ""
 
+msgid "OI Contest Schedule"
+msgstr ""
+
+msgid "Display upcoming OI contests with local times and live countdowns."
+msgstr ""
+
+msgid "Schedule settings"
+msgstr ""
+
+msgid "Number of contests"
+msgstr ""
+
+msgid "Compact layout"
+msgstr ""
+
 msgid "Running"
 msgstr ""
 

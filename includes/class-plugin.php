@@ -17,10 +17,54 @@ final class OICS_Plugin {
 	private function __construct() {
 		$this->renderer = new OICS_Schedule_Renderer( new OICS_Contest_Client() );
 
+		add_action( 'init', array( $this, 'register_block' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'register_dashboard_widget' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ) );
 		add_shortcode( 'oi_contest_schedule', array( $this, 'render_shortcode' ) );
+	}
+
+	public function register_block() {
+		$this->register_assets();
+		wp_register_script(
+			'oics-schedule-editor',
+			OICS_URL . 'assets/js/schedule-editor.js',
+			array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-server-side-render' ),
+			OICS_VERSION,
+			true
+		);
+		wp_localize_script(
+			'oics-schedule-editor',
+			'oicsScheduleEditorL10n',
+			array(
+				'title'       => __( 'OI Contest Schedule', 'oi-contest-schedule' ),
+				'description' => __( 'Display upcoming OI contests with local times and live countdowns.', 'oi-contest-schedule' ),
+				'settings'    => __( 'Schedule settings', 'oi-contest-schedule' ),
+				'limit'       => __( 'Number of contests', 'oi-contest-schedule' ),
+				'compact'     => __( 'Compact layout', 'oi-contest-schedule' ),
+			)
+		);
+
+		register_block_type(
+			'oics/contest-schedule',
+			array(
+				'api_version'     => 2,
+				'editor_script'   => 'oics-schedule-editor',
+				'editor_style'    => 'oics-schedule',
+				'style'           => 'oics-schedule',
+				'attributes'      => array(
+					'limit'   => array(
+						'type'    => 'number',
+						'default' => 10,
+					),
+					'compact' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+				),
+				'render_callback' => array( $this, 'render_block' ),
+			)
+		);
 	}
 
 	private function register_assets() {
@@ -42,7 +86,7 @@ final class OICS_Plugin {
 
 	public function enqueue_frontend_assets() {
 		$post = get_post();
-		if ( ! $post || ! has_shortcode( $post->post_content, 'oi_contest_schedule' ) ) {
+		if ( ! $post || ( ! has_shortcode( $post->post_content, 'oi_contest_schedule' ) && ! has_block( 'oics/contest-schedule', $post ) ) ) {
 			return;
 		}
 
@@ -87,6 +131,13 @@ final class OICS_Plugin {
 
 		$limit   = min( 50, max( 1, absint( $attributes['limit'] ) ) );
 		$compact = filter_var( $attributes['compact'], FILTER_VALIDATE_BOOLEAN );
+
+		return $this->renderer->render( $limit, $compact );
+	}
+
+	public function render_block( $attributes ) {
+		$limit   = isset( $attributes['limit'] ) ? min( 50, max( 1, absint( $attributes['limit'] ) ) ) : 10;
+		$compact = ! empty( $attributes['compact'] );
 
 		return $this->renderer->render( $limit, $compact );
 	}
