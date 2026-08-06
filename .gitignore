@@ -1,0 +1,15 @@
+/vendor/
+/node_modules/
+/build/
+/dist/
+/.intelephense/
+.env
+.env.*
+!/env.example
+/wp-config.php
+/wordpress/
+/wp-content/
+.DS_Store
+*.zip
+/languages/*.mo
+/svn/
