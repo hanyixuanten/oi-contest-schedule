@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OI Contest Schedule 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/hanyixuanten/OI-contest-fetch/issues\n"
+"POT-Creation-Date: 2026-08-06 00:00+0000\n"
+"PO-Revision-Date: 2026-08-06 00:00+0000\n"
+"Last-Translator: hanyixuanten\n"
+"Language-Team: Simplified Chinese\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: oi-contest-schedule\n"
+
+msgid "Upcoming OI Contests"
+msgstr "即将到来的 OI 赛事"
+
+msgid "Running"
+msgstr "进行中"
+
+msgid "Ended"
+msgstr "已结束"
+
+msgid "Upcoming"
+msgstr "即将开始"
+
+msgid "d"
+msgstr "天"
+
+msgid "h"
+msgstr "时"
+
+msgid "m"
+msgstr "分"
+
+msgid "s"
+msgstr "秒"
+
+msgid "The contest data source returned an unexpected response."
+msgstr "赛事数据源返回了异常响应。"
+
+msgid "The contest data source returned invalid data."
+msgstr "赛事数据源返回了无效数据。"
+
+msgid "Contest data is temporarily unavailable. Please try again later."
+msgstr "暂时无法加载赛事数据，请稍后再试。"
+
+msgid "No upcoming contests."
+msgstr "暂无即将开始的赛事。"
+
+msgid "Times use your device time zone."
+msgstr "时间按设备时区显示。"
+
+msgid "%d contest"
+msgid_plural "%d contests"
+msgstr[0] "%d 场赛事"
+
+msgid "Data updated"
+msgstr "数据更新时间"
