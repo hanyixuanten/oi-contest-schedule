@@ -1,0 +1,110 @@
+name: Bug Report and Feature Request
+description: Report an OI Contest Schedule issue or suggest a feature or documentation improvement
+title: "[Issue]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to provide feedback. Please include as much information as possible so we can investigate efficiently.
+        Do not include site credentials, cookies, personal information, or other sensitive content.
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      options:
+        - Bug report
+        - Feature request
+        - Documentation issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Description
+      description: Clearly describe the issue you encountered or the feature you would like to see.
+      placeholder: Describe the current behavior, expected behavior, and impact.
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: OI Contest Schedule version
+      placeholder: "For example: 0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: wordpress-version
+    attributes:
+      label: WordPress version
+      placeholder: "For example: 6.4"
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "For example: 7.4"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the display location, shortcode attributes, theme, relevant plugins, browser, and device time zone.
+      placeholder: |
+        Display location: Dashboard / Page shortcode
+        Shortcode and attributes:
+        Theme:
+        Relevant plugins:
+        Browser:
+        Device time zone:
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: For bug reports, provide the minimum steps that consistently reproduce the issue. Enter "Not applicable" for other issue types.
+      placeholder: |
+        1. Open ...
+        2. Configure ...
+        3. Run ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      placeholder: Describe what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste error logs with credentials and personal information removed, or drag in screenshots. Enter "None" if unavailable.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other information that may help us understand or investigate the issue.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I searched the existing issues and did not find the same issue or suggestion.
+          required: true
+        - label: I removed all site credentials, cookies, personal information, and other sensitive content.
+          required: true
