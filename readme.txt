@@ -8,11 +8,11 @@ Stable tag: 0.1.0
 License: GPL-3.0-only
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Display upcoming OI and competitive programming contests in the WordPress dashboard or with an editor block.
+Display currently running and upcoming OI contests in the WordPress dashboard or with an editor block.
 
 == Description ==
 
-OI Contest Schedule displays upcoming competitive programming contests with local times and live countdowns.
+OI Contest Schedule displays currently running and upcoming competitive programming contests with local times and live countdowns. Contests that have ended are not displayed.
 
 The plugin adds an **Upcoming OI Contests** widget to the WordPress dashboard. To display the schedule on the front end, add the **OI Contest Schedule** block to a post or page.
 
@@ -20,7 +20,7 @@ Features include:
 
 * Upcoming and currently running contests ordered by start time.
 * Contest platform, title, start time, end time, and live countdown.
-* Dates formatted in each visitor's device time zone.
+* Dates formatted in each visitor's client device time zone, rather than the time zone configured in WordPress, and identified by its IANA name (for example, `Asia/Shanghai`).
 * Responsive and compact layouts.
 * A five-minute cache using the WordPress Transients API.
 * English and Simplified Chinese translations.
@@ -58,7 +58,7 @@ The plugin shows contests whose end time is still in the future, including conte
 
 = Which time zone is used? =
 
-Dates are formatted in the visitor's device time zone using the browser's internationalization API.
+Dates are formatted in the visitor's client device time zone using the browser's internationalization API. The time zone configured in the WordPress site settings is not used.
 
 = How often is the contest data refreshed? =
 

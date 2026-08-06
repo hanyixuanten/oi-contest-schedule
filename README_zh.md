@@ -2,9 +2,9 @@
 
 [English](README.md)
 
-OI Contest Schedule 是一款轻量级 WordPress 插件，可在 WordPress 仪表盘、文章或页面中展示即将开始的程序设计竞赛。
+OI Contest Schedule 是一款轻量级 WordPress 插件，可在 WordPress 仪表盘、文章或页面中展示正在进行和即将开始的程序设计竞赛，不显示已结束的赛事。
 
-比赛数据由 [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch) 提供，时间会根据访客设备的时区显示。
+比赛数据由 [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch) 提供，时间会根据访客客户端设备的时区显示，而非 WordPress 中设置的站点时区。日程中会标明客户端时区的 IANA 名称，例如 `Asia/Shanghai`。
 
 ## 功能特性
 

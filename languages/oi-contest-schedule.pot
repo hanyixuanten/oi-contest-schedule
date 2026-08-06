@@ -59,7 +59,7 @@ msgstr ""
 msgid "No upcoming contests."
 msgstr ""
 
-msgid "Times use your device time zone."
+msgid "Device time zone"
 msgstr ""
 
 msgid "%d contest"

@@ -29,7 +29,7 @@ final class OICS_Plugin {
 		wp_register_script(
 			'oics-schedule-editor',
 			OICS_URL . 'assets/js/schedule-editor.js',
-			array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-server-side-render' ),
+			array( 'oics-schedule', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-server-side-render' ),
 			OICS_VERSION,
 			true
 		);
@@ -68,8 +68,11 @@ final class OICS_Plugin {
 	}
 
 	private function register_assets() {
-		wp_register_style( 'oics-schedule', OICS_URL . 'assets/css/schedule.css', array(), OICS_VERSION );
-		wp_register_script( 'oics-schedule', OICS_URL . 'assets/js/schedule.js', array(), OICS_VERSION, true );
+		$style_version  = OICS_VERSION . '.' . filemtime( OICS_PATH . 'assets/css/schedule.css' );
+		$script_version = OICS_VERSION . '.' . filemtime( OICS_PATH . 'assets/js/schedule.js' );
+
+		wp_register_style( 'oics-schedule', OICS_URL . 'assets/css/schedule.css', array(), $style_version );
+		wp_register_script( 'oics-schedule', OICS_URL . 'assets/js/schedule.js', array(), $script_version, true );
 		wp_localize_script(
 			'oics-schedule',
 			'oicsScheduleL10n',

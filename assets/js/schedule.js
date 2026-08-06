@@ -29,6 +29,13 @@
 		} );
 	}
 
+	function updateTimeZones() {
+		var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+		document.querySelectorAll( '[data-oics-time-zone]' ).forEach( function ( element ) {
+			element.textContent = timeZone;
+		} );
+	}
+
 	function countdownText( startTimestamp, endTimestamp ) {
 		var now = Date.now();
 		if ( endTimestamp * 1000 <= now ) {
@@ -57,8 +64,25 @@
 
 	function initialize() {
 		updateTimes();
+		updateTimeZones();
 		updateCountdowns();
 		window.setInterval( updateCountdowns, 1000 );
+
+		if ( 'MutationObserver' in window ) {
+			new MutationObserver( function ( mutations ) {
+				var hasAddedElements = mutations.some( function ( mutation ) {
+					return Array.prototype.some.call( mutation.addedNodes, function ( node ) {
+						return 1 === node.nodeType;
+					} );
+				} );
+
+				if ( hasAddedElements ) {
+					updateTimes();
+					updateTimeZones();
+					updateCountdowns();
+				}
+			} ).observe( document.body, { childList: true, subtree: true } );
+		}
 	}
 
 	if ( 'loading' === document.readyState ) {

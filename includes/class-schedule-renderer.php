@@ -32,7 +32,8 @@ final class OICS_Schedule_Renderer {
 				<div>
 					<h2 class="oics-schedule__heading"><?php esc_html_e( 'Upcoming OI Contests', 'oi-contest-schedule' ); ?></h2>
 					<p class="oics-schedule__meta">
-						<?php esc_html_e( 'Times use your device time zone.', 'oi-contest-schedule' ); ?>
+						<?php esc_html_e( 'Device time zone', 'oi-contest-schedule' ); ?>:
+						<span data-oics-time-zone>UTC</span>
 					</p>
 				</div>
 				<span class="oics-schedule__count"><?php echo esc_html( sprintf( _n( '%d contest', '%d contests', count( $contests ), 'oi-contest-schedule' ), count( $contests ) ) ); ?></span>

@@ -64,8 +64,8 @@ msgstr "暂时无法加载赛事数据，请稍后再试。"
 msgid "No upcoming contests."
 msgstr "暂无即将开始的赛事。"
 
-msgid "Times use your device time zone."
-msgstr "时间按设备时区显示。"
+msgid "Device time zone"
+msgstr "设备时区"
 
 msgid "%d contest"
 msgid_plural "%d contests"

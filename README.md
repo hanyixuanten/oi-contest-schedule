@@ -2,9 +2,9 @@
 
 [简体中文](README_zh.md)
 
-OI Contest Schedule is a lightweight WordPress plugin that displays upcoming competitive programming contests in the WordPress dashboard or on any post or page.
+OI Contest Schedule is a lightweight WordPress plugin that displays currently running and upcoming competitive programming contests in the WordPress dashboard or on any post or page. Contests that have ended are not displayed.
 
-Contest data is provided by [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch) and displayed in each visitor's device time zone.
+Contest data is provided by [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch) and displayed in each visitor's client device time zone, not the time zone configured in WordPress. The schedule identifies the client time zone by its IANA name, such as `Asia/Shanghai`.
 
 ## Features
 
