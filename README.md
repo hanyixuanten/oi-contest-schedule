@@ -1,41 +1,105 @@
-# OI Contest Schedule WordPress Plugin
+# OI Contest Schedule
 
-This subproject packages the OI contest feed as a WordPress plugin. It follows the repository layout and release pattern used by `wp-translate`: the installable plugin lives in its slug directory, while `build.sh` creates a versioned ZIP archive under `build/`.
+[简体中文](README_zh.md)
+
+OI Contest Schedule is a lightweight WordPress plugin that displays upcoming competitive programming contests in the WordPress dashboard or on any post or page.
+
+Contest data is provided by [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch) and displayed in each visitor's device time zone.
 
 ## Features
 
 - Adds an **Upcoming OI Contests** widget to the WordPress dashboard.
 - Provides the `[oi_contest_schedule]` shortcode for posts and pages.
-- Formats timestamps in the visitor's browser time zone.
-- Shows live countdowns and distinguishes currently running contests.
-- Caches the public GitHub JSON feed with a five-minute WordPress transient.
+- Shows contest platform, title, start and end times, and a live countdown.
+- Identifies contests that are currently running.
+- Supports responsive and compact layouts.
+- Caches the remote contest feed for five minutes with the WordPress Transients API.
+- Includes English and Simplified Chinese translations.
 
 ## Requirements
 
-- WordPress 6.4 or newer
-- PHP 7.4 or newer
+- WordPress 6.4 or later
+- PHP 7.4 or later
+- Outbound HTTPS access to `raw.githubusercontent.com`
 
-## Usage
+## Installation
 
-Activate the plugin and add a Shortcode block containing:
+### Install a release package
+
+1. Download the latest plugin ZIP from the repository's [Releases](https://github.com/hanyixuanten/oi-contest-schedule/releases) page.
+2. In WordPress, go to **Plugins > Add New Plugin > Upload Plugin**.
+3. Select the ZIP file, then install and activate the plugin.
+
+### Install from source
+
+1. Copy or clone this repository to `wp-content/plugins/oi-contest-schedule`.
+2. Activate **OI Contest Schedule** from the WordPress **Plugins** page.
+
+After activation, the dashboard widget appears automatically on **Dashboard > Home**.
+
+## Shortcode
+
+Add a Shortcode block to a post or page and use:
 
 ```text
 [oi_contest_schedule]
 ```
 
-The shortcode accepts `limit` from 1 to 50 and a compact layout flag:
+The shortcode accepts the following attributes:
+
+| Attribute | Default | Description |
+| --- | --- | --- |
+| `limit` | `10` | Number of contests to show. Values are constrained to the range 1-50. |
+| `compact` | `false` | Set to `true` to use the compact layout. |
+
+Example:
 
 ```text
 [oi_contest_schedule limit="20" compact="true"]
 ```
 
-## Build
+## Data And Caching
 
-Run from this directory:
+The plugin retrieves contest data from the public JSON feed maintained by [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch). Only running and upcoming contests with valid links are shown, ordered by start time.
+
+The normalized response is cached for five minutes. Uninstalling the plugin removes this cached transient. Site developers can replace the feed URL with the `oics_contest_data_url` filter:
+
+```php
+add_filter(
+    'oics_contest_data_url',
+    static function () {
+        return 'https://example.com/contests.json';
+    }
+);
+```
+
+The replacement endpoint must return the same JSON structure as the default feed.
+
+## Development
+
+The plugin has no Composer or npm dependencies. To build an installable archive, ensure `grep`, `sed`, GNU gettext's `msgfmt`, `zip`, and `unzip` are available, then run:
 
 ```bash
-chmod +x build.sh
 ./build.sh build
 ```
 
-The archive is written to `build/oi-contest-schedule-<version>.zip`.
+The command validates translations and package contents, then creates `oi-contest-schedule-<version>.zip` in the repository root. To remove local build artifacts, run:
+
+```bash
+./build.sh clean
+```
+
+## Project Structure
+
+```text
+oi-contest-schedule.php   Plugin bootstrap and metadata
+includes/                 Data client, renderer, and plugin integration
+assets/                   Frontend styles and countdown script
+languages/                Translation template and Chinese translation
+uninstall.php             Cache cleanup on uninstall
+build.sh                  Release package builder
+```
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
