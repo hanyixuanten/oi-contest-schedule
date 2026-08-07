@@ -119,7 +119,7 @@ final class OICS_Plugin {
 	}
 
 	public function render_dashboard_widget() {
-		echo $this->renderer->render( 8, true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $this->renderer->render( 8 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	public function render_shortcode( $attributes ) {
