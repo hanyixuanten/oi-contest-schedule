@@ -29,8 +29,8 @@ jobs:
         id: package
         run: |
           set -eu
-          version="$(grep -E '^ \* Version:' oi-contest-schedule.php | sed -E 's/^ \* Version: *//')"
-          archive_name="oi-contest-schedule-${version}.zip"
+          version="$(grep -E '^ \* Version:' vblg-oi-contest-schedule.php | sed -E 's/^ \* Version: *//')"
+          archive_name="vblg-oi-contest-schedule-${version}.zip"
           if [ "${GITHUB_REF_TYPE}" = "tag" ] && [ "${GITHUB_REF_NAME}" != "v${version}" ]; then
             printf 'Tag %s does not match plugin version %s.\n' "${GITHUB_REF_NAME}" "${version}" >&2
             exit 1
@@ -41,7 +41,7 @@ jobs:
       - name: Upload plugin archive
         uses: actions/upload-artifact@v4
         with:
-          name: oi-contest-schedule-plugin
+          name: vblg-oi-contest-schedule-plugin
           path: ${{ steps.package.outputs.archive }}
           if-no-files-found: error
           retention-days: 30

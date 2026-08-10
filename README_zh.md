@@ -1,8 +1,8 @@
-# OI Contest Schedule
+# vblg OI Contest Schedule
 
 [English](README.md)
 
-OI Contest Schedule 是一款轻量级 WordPress 插件，可在 WordPress 仪表盘、文章或页面中展示正在进行和即将开始的程序设计竞赛，不显示已结束的赛事。
+vblg OI Contest Schedule 是一款轻量级 WordPress 插件，可在 WordPress 仪表盘、文章或页面中展示正在进行和即将开始的程序设计竞赛，不显示已结束的赛事。
 
 比赛数据由 [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch) 提供，时间会根据访客客户端设备的时区显示，而非 WordPress 中设置的站点时区。日程中会标明客户端时区的 IANA 名称，例如 `Asia/Shanghai`。
 
@@ -27,14 +27,14 @@ OI Contest Schedule 是一款轻量级 WordPress 插件，可在 WordPress 仪�
 
 ### 安装发行包
 
-1. 从仓库的 [Releases](https://github.com/hanyixuanten/oi-contest-schedule/releases) 页面下载最新的插件 ZIP 包。
+1. 从仓库的 [Releases](https://github.com/hanyixuanten/vblg-oi-contest-schedule/releases) 页面下载最新的插件 ZIP 包。
 2. 在 WordPress 后台进入 **插件 > 安装插件 > 上传插件**。
 3. 选择 ZIP 文件，然后安装并启用插件。
 
 ### 从源码安装
 
-1. 将本仓库复制或克隆到 `wp-content/plugins/oi-contest-schedule`。
-2. 在 WordPress 后台的 **插件** 页面启用 **OI Contest Schedule**。
+1. 将本仓库复制或克隆到 `wp-content/plugins/vblg-oi-contest-schedule`。
+2. 在 WordPress 后台的 **插件** 页面启用 **vblg OI Contest Schedule**。
 
 启用后，赛事小组件会自动显示在 **仪表盘 > 首页** 中。
 
@@ -90,7 +90,7 @@ add_filter(
 ./build.sh build
 ```
 
-该命令会检查翻译和安装包内容，并在仓库根目录生成 `oi-contest-schedule-<版本>.zip`。清理本地构建产物可运行：
+该命令会检查翻译和安装包内容，并在仓库根目录生成 `vblg-oi-contest-schedule-<版本>.zip`。生成的安装包不包含 `languages/` 目录。清理本地构建产物可运行：
 
 ```bash
 ./build.sh clean
@@ -99,12 +99,12 @@ add_filter(
 ## 项目结构
 
 ```text
-oi-contest-schedule.php   插件入口与元数据
-includes/                 数据客户端、渲染器和插件集成
-assets/                   前端样式与倒计时脚本
-languages/                翻译模板与中文翻译
-uninstall.php             卸载时清理缓存
-build.sh                  发布包构建脚本
+vblg-oi-contest-schedule.php   插件入口与元数据
+includes/                      数据客户端、渲染器和插件集成
+assets/                        前端样式与倒计时脚本
+languages/                     翻译模板与中文翻译（不打包）
+uninstall.php                  卸载时清理缓存
+build.sh                       发布包构建脚本
 ```
 
 ## 许可证

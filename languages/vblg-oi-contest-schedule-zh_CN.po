@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OI Contest Schedule 0.1.0\n"
+"Project-Id-Version: vblg OI Contest Schedule 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/hanyixuanten/OI-contest-fetch/issues\n"
 "POT-Creation-Date: 2026-08-06 00:00+0000\n"
 "PO-Revision-Date: 2026-08-06 00:00+0000\n"
@@ -11,12 +11,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Domain: oi-contest-schedule\n"
+"X-Domain: vblg-oi-contest-schedule\n"
 
 msgid "Upcoming OI Contests"
 msgstr "即将到来的 OI 赛事"
 
-msgid "OI Contest Schedule"
+msgid "vblg OI Contest Schedule"
 msgstr "OI 赛事日程"
 
 msgid "Display upcoming OI contests with local times and live countdowns."

@@ -17,7 +17,7 @@ final class OICS_Contest_Client {
 			apply_filters( 'oics_contest_data_url', self::DATA_URL ),
 			array(
 				'timeout'    => 10,
-				'user-agent' => 'OI Contest Schedule/' . OICS_VERSION . '; ' . home_url( '/' ),
+				'user-agent' => 'vblg OI Contest Schedule/' . OICS_VERSION . '; ' . home_url( '/' ),
 			)
 		);
 
@@ -26,12 +26,12 @@ final class OICS_Contest_Client {
 		}
 
 		if ( 200 !== wp_remote_retrieve_response_code( $response ) ) {
-			return new WP_Error( 'oics_http_error', __( 'The contest data source returned an unexpected response.', 'oi-contest-schedule' ) );
+			return new WP_Error( 'oics_http_error', __( 'The contest data source returned an unexpected response.', 'vblg-oi-contest-schedule' ) );
 		}
 
 		$payload = json_decode( wp_remote_retrieve_body( $response ), true );
 		if ( ! $this->is_valid_payload( $payload ) ) {
-			return new WP_Error( 'oics_invalid_payload', __( 'The contest data source returned invalid data.', 'oi-contest-schedule' ) );
+			return new WP_Error( 'oics_invalid_payload', __( 'The contest data source returned invalid data.', 'vblg-oi-contest-schedule' ) );
 		}
 
 		$normalized = array(

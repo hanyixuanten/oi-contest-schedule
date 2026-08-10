@@ -12,12 +12,12 @@ final class OICS_Schedule_Renderer {
 	public function render( $limit = 10, $compact = false ) {
 		$payload = $this->client->get_payload();
 		if ( is_wp_error( $payload ) ) {
-			return $this->render_notice( __( 'Contest data is temporarily unavailable. Please try again later.', 'oi-contest-schedule' ), 'error' );
+			return $this->render_notice( __( 'Contest data is temporarily unavailable. Please try again later.', 'vblg-oi-contest-schedule' ), 'error' );
 		}
 
 		$contests = array_slice( $payload['contests'], 0, $limit );
 		if ( empty( $contests ) ) {
-			return $this->render_notice( __( 'No upcoming contests.', 'oi-contest-schedule' ), 'empty' );
+			return $this->render_notice( __( 'No upcoming contests.', 'vblg-oi-contest-schedule' ), 'empty' );
 		}
 
 		$classes = 'oics-schedule';
@@ -30,13 +30,13 @@ final class OICS_Schedule_Renderer {
 		<div class="<?php echo esc_attr( $classes ); ?>" data-oics-schedule>
 			<div class="oics-schedule__header">
 				<div>
-					<h2 class="oics-schedule__heading"><?php esc_html_e( 'Upcoming OI Contests', 'oi-contest-schedule' ); ?></h2>
+					<h2 class="oics-schedule__heading"><?php esc_html_e( 'Upcoming OI Contests', 'vblg-oi-contest-schedule' ); ?></h2>
 					<p class="oics-schedule__meta">
-						<?php esc_html_e( 'Device time zone', 'oi-contest-schedule' ); ?>:
+						<?php esc_html_e( 'Device time zone', 'vblg-oi-contest-schedule' ); ?>:
 						<span data-oics-time-zone>UTC</span>
 					</p>
 				</div>
-				<span class="oics-schedule__count"><?php echo esc_html( sprintf( _n( '%d contest', '%d contests', count( $contests ), 'oi-contest-schedule' ), count( $contests ) ) ); ?></span>
+				<span class="oics-schedule__count"><?php echo esc_html( sprintf( _n( '%d contest', '%d contests', count( $contests ), 'vblg-oi-contest-schedule' ), count( $contests ) ) ); ?></span>
 			</div>
 			<div class="oics-schedule__list">
 				<?php foreach ( $contests as $contest ) : ?>
@@ -45,7 +45,7 @@ final class OICS_Schedule_Renderer {
 			</div>
 			<?php if ( ! empty( $payload['generated_at'] ) ) : ?>
 				<p class="oics-schedule__updated">
-					<?php esc_html_e( 'Data updated', 'oi-contest-schedule' ); ?>:
+					<?php esc_html_e( 'Data updated', 'vblg-oi-contest-schedule' ); ?>:
 					<time data-oics-time="<?php echo esc_attr( $payload['generated_at'] ); ?>" data-oics-seconds></time>
 				</p>
 			<?php endif; ?>
@@ -69,7 +69,7 @@ final class OICS_Schedule_Renderer {
 				</span>
 			</span>
 			<span class="oics-contest__countdown" data-oics-start="<?php echo esc_attr( $contest['start_time'] ); ?>" data-oics-end="<?php echo esc_attr( $contest['end_time'] ); ?>">
-				<?php echo 'running' === $contest['status'] ? esc_html__( 'Running', 'oi-contest-schedule' ) : esc_html__( 'Upcoming', 'oi-contest-schedule' ); ?>
+				<?php echo 'running' === $contest['status'] ? esc_html__( 'Running', 'vblg-oi-contest-schedule' ) : esc_html__( 'Upcoming', 'vblg-oi-contest-schedule' ); ?>
 			</span>
 		</a>
 		<?php

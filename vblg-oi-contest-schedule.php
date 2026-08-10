@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: OI Contest Schedule
+ * Plugin Name: vblg OI Contest Schedule
  * Plugin URI: https://github.com/hanyixuanten/oi-contest-schedule
  * Description: Display upcoming OI contests in a dashboard widget or with an editor block.
  * Version: 0.1.0
@@ -10,8 +10,7 @@
  * Author URI: https://www.vblg.top
  * License: GPL-3.0-only
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: oi-contest-schedule
- * Domain Path: /languages
+ * Text Domain: vblg-oi-contest-schedule
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -25,9 +24,4 @@ require_once OICS_PATH . 'includes/class-contest-client.php';
 require_once OICS_PATH . 'includes/class-schedule-renderer.php';
 require_once OICS_PATH . 'includes/class-plugin.php';
 
-function oics_load_textdomain() {
-	load_plugin_textdomain( 'oi-contest-schedule', false, dirname( plugin_basename( OICS_FILE ) ) . '/languages' );
-}
-
-add_action( 'init', 'oics_load_textdomain' );
 add_action( 'plugins_loaded', array( 'OICS_Plugin', 'instance' ) );

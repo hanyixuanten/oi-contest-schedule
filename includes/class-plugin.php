@@ -37,11 +37,11 @@ final class OICS_Plugin {
 			'oics-schedule-editor',
 			'oicsScheduleEditorL10n',
 			array(
-				'title'       => __( 'OI Contest Schedule', 'oi-contest-schedule' ),
-				'description' => __( 'Display upcoming OI contests with local times and live countdowns.', 'oi-contest-schedule' ),
-				'settings'    => __( 'Schedule settings', 'oi-contest-schedule' ),
-				'limit'       => __( 'Number of contests', 'oi-contest-schedule' ),
-				'compact'     => __( 'Compact layout', 'oi-contest-schedule' ),
+				'title'       => __( 'vblg OI Contest Schedule', 'vblg-oi-contest-schedule' ),
+				'description' => __( 'Display upcoming OI contests with local times and live countdowns.', 'vblg-oi-contest-schedule' ),
+				'settings'    => __( 'Schedule settings', 'vblg-oi-contest-schedule' ),
+				'limit'       => __( 'Number of contests', 'vblg-oi-contest-schedule' ),
+				'compact'     => __( 'Compact layout', 'vblg-oi-contest-schedule' ),
 			)
 		);
 
@@ -77,12 +77,12 @@ final class OICS_Plugin {
 			'oics-schedule',
 			'oicsScheduleL10n',
 			array(
-				'running' => __( 'Running', 'oi-contest-schedule' ),
-				'ended'   => __( 'Ended', 'oi-contest-schedule' ),
-				'day'     => __( 'd', 'oi-contest-schedule' ),
-				'hour'    => __( 'h', 'oi-contest-schedule' ),
-				'minute'  => __( 'm', 'oi-contest-schedule' ),
-				'second'  => __( 's', 'oi-contest-schedule' ),
+				'running' => __( 'Running', 'vblg-oi-contest-schedule' ),
+				'ended'   => __( 'Ended', 'vblg-oi-contest-schedule' ),
+				'day'     => __( 'd', 'vblg-oi-contest-schedule' ),
+				'hour'    => __( 'h', 'vblg-oi-contest-schedule' ),
+				'minute'  => __( 'm', 'vblg-oi-contest-schedule' ),
+				'second'  => __( 's', 'vblg-oi-contest-schedule' ),
 			)
 		);
 	}
@@ -113,7 +113,7 @@ final class OICS_Plugin {
 	public function register_dashboard_widget() {
 		wp_add_dashboard_widget(
 			'oics_contest_schedule',
-			esc_html__( 'Upcoming OI Contests', 'oi-contest-schedule' ),
+			esc_html__( 'Upcoming OI Contests', 'vblg-oi-contest-schedule' ),
 			array( $this, 'render_dashboard_widget' )
 		);
 	}

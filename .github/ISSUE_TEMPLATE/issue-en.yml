@@ -1,5 +1,5 @@
 name: Bug Report and Feature Request
-description: Report an OI Contest Schedule issue or suggest a feature or documentation improvement
+description: Report a vblg OI Contest Schedule issue or suggest a feature or documentation improvement
 title: "[Issue]: "
 body:
   - type: markdown
@@ -32,7 +32,7 @@ body:
   - type: input
     id: plugin-version
     attributes:
-      label: OI Contest Schedule version
+      label: vblg OI Contest Schedule version
       placeholder: "For example: 0.1.0"
     validations:
       required: true

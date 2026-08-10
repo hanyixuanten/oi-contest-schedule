@@ -2,7 +2,7 @@
 
 set -eu
 
-plugin_slug="oi-contest-schedule"
+plugin_slug="vblg-oi-contest-schedule"
 plugin_file="${plugin_slug}.php"
 script_dir="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
 build_dir="${script_dir}/build"
@@ -34,23 +34,17 @@ build() {
 		"${plugin_dir}/"
 	cp -R "${script_dir}/includes" "${plugin_dir}/"
 	cp -R "${script_dir}/assets" "${plugin_dir}/"
-	mkdir -p "${plugin_dir}/languages"
-	cp "${script_dir}/languages/${plugin_slug}.pot" \
-		"${script_dir}/languages/${plugin_slug}-zh_CN.po" \
-		"${plugin_dir}/languages/"
-	msgfmt --check --check-format \
-		--output-file="${plugin_dir}/languages/${plugin_slug}-zh_CN.mo" \
+	msgfmt --check --check-format --output-file=/dev/null \
 		"${script_dir}/languages/${plugin_slug}-zh_CN.po"
 	(
 		cd "${build_dir}"
 		zip -qr "${archive_path}" "${plugin_slug}"
 	)
 
-	unzip -p "${archive_path}" "${plugin_slug}/${plugin_file}" | grep -q '^ \* Plugin Name: OI Contest Schedule$'
+	unzip -p "${archive_path}" "${plugin_slug}/${plugin_file}" | grep -q '^ \* Plugin Name: vblg OI Contest Schedule$'
 	unzip -p "${archive_path}" "${plugin_slug}/readme.txt" | grep -q "^Stable tag: ${version}$"
-	unzip -Z1 "${archive_path}" | grep -q "^${plugin_slug}/languages/${plugin_slug}-zh_CN.mo$"
-	if unzip -Z1 "${archive_path}" | grep -q '/wp-plugins-.*\.po$'; then
-		printf 'Unexpected GlotPress submission file found in archive.\n' >&2
+	if unzip -Z1 "${archive_path}" | grep -q "^${plugin_slug}/languages/"; then
+		printf 'Unexpected languages directory found in archive.\n' >&2
 		exit 1
 	fi
 	unzip -Z1 "${archive_path}" | grep -q "^${plugin_slug}/includes/class-contest-client.php$"

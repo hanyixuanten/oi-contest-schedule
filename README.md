@@ -1,15 +1,15 @@
-# OI Contest Schedule
+# vblg OI Contest Schedule
 
 [简体中文](README_zh.md)
 
-OI Contest Schedule is a lightweight WordPress plugin that displays currently running and upcoming competitive programming contests in the WordPress dashboard or on any post or page. Contests that have ended are not displayed.
+vblg OI Contest Schedule is a lightweight WordPress plugin that displays currently running and upcoming competitive programming contests in the WordPress dashboard or on any post or page. Contests that have ended are not displayed.
 
 Contest data is provided by [OI-contest-fetch](https://github.com/hanyixuanten/OI-contest-fetch) and displayed in each visitor's client device time zone, not the time zone configured in WordPress. The schedule identifies the client time zone by its IANA name, such as `Asia/Shanghai`.
 
 ## Features
 
 - Adds an **Upcoming OI Contests** widget to the WordPress dashboard.
-- Provides an **OI Contest Schedule** block for posts and pages.
+- Provides a **vblg OI Contest Schedule** block for posts and pages.
 - Keeps the `[oi_contest_schedule]` shortcode available for compatibility and templates.
 - Shows contest platform, title, start and end times, and a live countdown.
 - Identifies contests that are currently running.
@@ -27,20 +27,20 @@ Contest data is provided by [OI-contest-fetch](https://github.com/hanyixuanten/O
 
 ### Install a release package
 
-1. Download the latest plugin ZIP from the repository's [Releases](https://github.com/hanyixuanten/oi-contest-schedule/releases) page.
+1. Download the latest plugin ZIP from the repository's [Releases](https://github.com/hanyixuanten/vblg-oi-contest-schedule/releases) page.
 2. In WordPress, go to **Plugins > Add New Plugin > Upload Plugin**.
 3. Select the ZIP file, then install and activate the plugin.
 
 ### Install from source
 
-1. Copy or clone this repository to `wp-content/plugins/oi-contest-schedule`.
-2. Activate **OI Contest Schedule** from the WordPress **Plugins** page.
+1. Copy or clone this repository to `wp-content/plugins/vblg-oi-contest-schedule`.
+2. Activate **vblg OI Contest Schedule** from the WordPress **Plugins** page.
 
 After activation, the dashboard widget appears automatically on **Dashboard > Home**.
 
 ## Editor Block
 
-In the post or page editor, select **Add block**, search for **OI Contest Schedule**, and insert the block. Use the block settings sidebar to choose how many contests to display (1-50) and whether to use the compact layout.
+In the post or page editor, select **Add block**, search for **vblg OI Contest Schedule**, and insert the block. Use the block settings sidebar to choose how many contests to display (1-50) and whether to use the compact layout.
 
 The block is rendered dynamically, so contest data remains current without editing the post.
 
@@ -90,7 +90,7 @@ The plugin has no Composer or npm dependencies. To build an installable archive,
 ./build.sh build
 ```
 
-The command validates translations and package contents, then creates `oi-contest-schedule-<version>.zip` in the repository root. To remove local build artifacts, run:
+The command validates translations and package contents, then creates `vblg-oi-contest-schedule-<version>.zip` in the repository root. The packaged archive does not include the `languages/` directory. To remove local build artifacts, run:
 
 ```bash
 ./build.sh clean
@@ -99,12 +99,12 @@ The command validates translations and package contents, then creates `oi-contes
 ## Project Structure
 
 ```text
-oi-contest-schedule.php   Plugin bootstrap and metadata
-includes/                 Data client, renderer, and plugin integration
-assets/                   Frontend styles and countdown script
-languages/                Translation template and Chinese translation
-uninstall.php             Cache cleanup on uninstall
-build.sh                  Release package builder
+vblg-oi-contest-schedule.php   Plugin bootstrap and metadata
+includes/                      Data client, renderer, and plugin integration
+assets/                        Frontend styles and countdown script
+languages/                     Translation template and Chinese translation (not packaged)
+uninstall.php                  Cache cleanup on uninstall
+build.sh                       Release package builder
 ```
 
 ## License
