@@ -21,7 +21,7 @@ final class OICS_Plugin {
 		add_action( 'wp_dashboard_setup', array( $this, 'register_dashboard_widget' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ) );
-		add_shortcode( 'oi_contest_schedule', array( $this, 'render_shortcode' ) );
+		add_shortcode( 'oics_oi_contest_schedule', array( $this, 'render_shortcode' ) );
 	}
 
 	public function register_block() {
@@ -89,7 +89,7 @@ final class OICS_Plugin {
 
 	public function enqueue_frontend_assets() {
 		$post = get_post();
-		if ( ! $post || ( ! has_shortcode( $post->post_content, 'oi_contest_schedule' ) && ! has_block( 'oics/contest-schedule', $post ) ) ) {
+		if ( ! $post || ( ! has_shortcode( $post->post_content, 'oics_oi_contest_schedule' ) && ! has_block( 'oics/contest-schedule', $post ) ) ) {
 			return;
 		}
 

@@ -10,7 +10,7 @@ vblg OI Contest Schedule 是一款轻量级 WordPress 插件，可在 WordPress 
 
 - 在 WordPress 仪表盘中添加“即将到来的 OI 赛事”小组件。
 - 提供“**OI 赛事日程**”区块，可直接插入文章或页面。
-- 保留 `[oi_contest_schedule]` 短代码，兼容经典编辑器和模板。
+- 保留 `[oics_oi_contest_schedule]` 短代码，兼容经典编辑器和模板。
 - 展示比赛平台、标题、开始和结束时间，以及实时倒计时。
 - 自动标记正在进行的比赛。
 - 支持响应式布局和紧凑布局。
@@ -49,7 +49,7 @@ vblg OI Contest Schedule 是一款轻量级 WordPress 插件，可在 WordPress 
 经典编辑器或模板仍可使用以下短代码：
 
 ```text
-[oi_contest_schedule]
+[oics_oi_contest_schedule]
 ```
 
 短代码支持以下属性：

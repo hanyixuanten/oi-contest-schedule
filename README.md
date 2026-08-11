@@ -10,7 +10,7 @@ Contest data is provided by [OI-contest-fetch](https://github.com/hanyixuanten/O
 
 - Adds an **Upcoming OI Contests** widget to the WordPress dashboard.
 - Provides a **vblg OI Contest Schedule** block for posts and pages.
-- Keeps the `[oi_contest_schedule]` shortcode available for compatibility and templates.
+- Keeps the `[oics_oi_contest_schedule]` shortcode available for compatibility and templates.
 - Shows contest platform, title, start and end times, and a live countdown.
 - Identifies contests that are currently running.
 - Supports responsive and compact layouts.
@@ -49,7 +49,7 @@ The block is rendered dynamically, so contest data remains current without editi
 For classic editors or templates, the shortcode remains available:
 
 ```text
-[oi_contest_schedule]
+[oics_oi_contest_schedule]
 ```
 
 The shortcode accepts the following attributes:

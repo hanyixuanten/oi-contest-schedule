@@ -33,7 +33,7 @@ Add the **vblg OI Contest Schedule** block from the block inserter. Its settings
 
 The shortcode remains available for classic editors and templates. By default it displays up to 10 contests:
 
-`[oi_contest_schedule]`
+`[oics_oi_contest_schedule]`
 
 Use `limit` to display between 1 and 50 contests:
 
@@ -91,7 +91,7 @@ Service and data source:
 
 * Added the upcoming contest dashboard widget.
 * Added the **vblg OI Contest Schedule** editor block with limit and compact layout settings.
-* Added the `[oi_contest_schedule]` shortcode with `limit` and `compact` options.
+* Added the `[oics_oi_contest_schedule]` shortcode with `limit` and `compact` options.
 * Added visitor-local time formatting and live countdowns.
 * Added platform styling and responsive layouts.
 * Added five-minute transient caching for the contest feed.
