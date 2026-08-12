@@ -4,7 +4,7 @@ Tags: contest, schedule, block, dashboard, competitive programming
 Requires at least: 6.4
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPL-3.0-only
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -87,6 +87,13 @@ Service and data source:
 
 == Changelog ==
 
+= 0.2.0 =
+
+* Renamed the plugin, package slug, text domain, and distribution workflows to **vblg OI Contest Schedule**.
+* Renamed the shortcode to `[oics_oi_contest_schedule]`.
+* Changed the dashboard widget to use the standard responsive layout instead of the compact layout.
+* Changed translation handling to use WordPress.org language packs and excluded translation sources from release packages.
+
 = 0.1.0 =
 
 * Added the upcoming contest dashboard widget.
@@ -98,6 +105,10 @@ Service and data source:
 * Added English and Simplified Chinese translations.
 
 == Upgrade Notice ==
+
+= 0.2.0 =
+
+The plugin slug and shortcode have changed. Replace `[oi_contest_schedule]` with `[oics_oi_contest_schedule]` after upgrading.
 
 = 0.1.0 =
 

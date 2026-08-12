@@ -3,7 +3,7 @@
  * Plugin Name: vblg OI Contest Schedule
  * Plugin URI: https://github.com/hanyixuanten/oi-contest-schedule
  * Description: Display upcoming OI contests in a dashboard widget or with an editor block.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: hanyixuanten
@@ -15,7 +15,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'OICS_VERSION', '0.1.0' );
+define( 'OICS_VERSION', '0.2.0' );
 define( 'OICS_FILE', __FILE__ );
 define( 'OICS_PATH', plugin_dir_path( __FILE__ ) );
 define( 'OICS_URL', plugin_dir_url( __FILE__ ) );
